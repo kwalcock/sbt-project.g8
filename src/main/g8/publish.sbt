@@ -1,3 +1,5 @@
+import org.clulab.sbt.BuildUtils
+
 val publication = "$name$"
 val publicationNorm = "$name;format="norm"$"
 
@@ -21,7 +23,7 @@ ThisBuild / organizationName := "Computational Language Understanding (CLU) Lab"
 ThisBuild / pomIncludeRepository := { _ => false }
 ThisBuild / publishMavenStyle := true
 ThisBuild / publishTo := {
-  val useArtifactory = $if(artifactory.truthy)$true$else$false$endif$
+  val useArtifactory = BuildUtils.artifactory
 
   if (useArtifactory) {
     val realm = "Artifactory Realm"

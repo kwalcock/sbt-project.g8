@@ -1,3 +1,5 @@
+import org.clulab.sbt.BuildUtils
+
 Compile / packageBin / mappings := {
 
   def mkMapping(filename: String): (File, String) = {
@@ -27,7 +29,7 @@ Compile / packageBin := {
   ((Compile / packageBin).map { file: File =>
     // This is inside the map because otherwise there is an error message
     // [error] java.lang.IllegalArgumentException: Could not find proxy for val compress: Boolean
-    val compress = $if(compress.truthy)$true$else$false$endif$
+    val compress = BuildUtilities.compression
 
     if (compress)
       file
@@ -73,3 +75,8 @@ Compile / packageBin := {
     }
   }).value
 }
+
+// This setting adversely affects logLevel during tests, so needs counterweight.
+// ThisBuild / Compile / logLevel := Level.Error
+// ThisBuild / Runtime / logLevel := Level.Info
+ThisBuild / Compile / scalacOptions ++= Seq("-feature", "-unchecked", "-deprecation")
