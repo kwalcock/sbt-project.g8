@@ -32,6 +32,6 @@ class TestResource extends Test {
   it should "be accessible" in {
     // package;format="packaged" results in backlashes and
     // syntax errors on Windows, so this is converted manually.
-    println(getTextFromResource("/" + "$package$".replace('.', '/') + "/$resource$"))
+    println(getTextFromResource("/" + "$package$".replace('.', '/') + "/resource.txt"))
   }
 }
