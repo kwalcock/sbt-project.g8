@@ -7,11 +7,11 @@ trait $name$Configured extends Configured {
   override def getConf: Config = config
 }
 
-class $name$ extends $name$Configured {
+class $name$() extends $name$Configured {
 
 }
 
 object $name$ {
 
-  def apply: $name$ = new $name()
+  def apply(): $name$ = new $name$()
 }
