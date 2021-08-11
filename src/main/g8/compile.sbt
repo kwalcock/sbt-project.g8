@@ -29,9 +29,9 @@ Compile / packageBin := {
   ((Compile / packageBin).map { file: File =>
     // This is inside the map because otherwise there is an error message
     // [error] java.lang.IllegalArgumentException: Could not find proxy for val compress: Boolean
-    val compress = BuildUtilities.compression
+    val useCompression = BuildUtilities.compression
 
-    if (compress)
+    if (useCompression)
       file
     else {
       import java.io.{FileInputStream, FileOutputStream, ByteArrayOutputStream}
