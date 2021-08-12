@@ -2,7 +2,7 @@ import org.clulab.sbt.BuildUtils
 import org.clulab.sbt.Resolvers
 
 name := "$name$"
-description := "The $name$ project implements the $package$ package."
+description := "The $name$ project implements the $package$ package including the $class$ class."
 
 val scala11 = "2.11.12" // up to 2.11.12
 val scala12 = "2.12.13" // up to 2.12.13
@@ -28,8 +28,8 @@ libraryDependencies ++= {
 lazy val core = (project in file("."))
   .enablePlugins(BuildInfoPlugin)
   .disablePlugins(PlayScala, JavaAppPackaging, SbtNativePackager)
-  .dependsOn($name$common % "compile -> compile; test -> test")
-  .aggregate($name$common)
+  .dependsOn(common % "compile -> compile; test -> test")
+  .aggregate(common)
   .settings(
     assembly / aggregate := false
   )

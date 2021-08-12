@@ -1,5 +1,6 @@
 package $package$
 
+import $package$.common.utils.BuildUtils
 import $package$.common.utils.Test
 
 import java.io.FileNotFoundException
@@ -34,6 +35,6 @@ class TestResource extends Test {
   it should "be accessible" in {
     // package;format="packaged" results in backlashes and
     // syntax errors on Windows, so this is converted manually.
-    println(getTextFromResource("/" + "$package$".replace('.', '/') + "/resource.txt"))
+    println(getTextFromResource("/" + BuildUtils.pkgToDir("$package$") + "/resource.txt"))
   }
 }
