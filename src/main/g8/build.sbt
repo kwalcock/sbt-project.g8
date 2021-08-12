@@ -2,7 +2,7 @@ import org.clulab.sbt.BuildUtils
 import org.clulab.sbt.Resolvers
 
 name := "$name$"
-description := "$explanation$"
+description := "The $name$ project implements the $package$ package."
 
 val scala11 = "2.11.12" // up to 2.11.12
 val scala12 = "2.12.13" // up to 2.12.13
@@ -34,4 +34,4 @@ lazy val core = (project in file("."))
     assembly / aggregate := false
   )
 
-lazy val $name$common = project
+lazy val common = project

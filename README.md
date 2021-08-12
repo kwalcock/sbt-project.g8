@@ -6,7 +6,7 @@ To use this template as an `sbt` project, do not clone it, but instead run
 ```
 $ sbt new http://github.com/clulab/sbt-project.g8.git
 ```
-and when prompted, give values for `name`, `package`, and `explanation` (i.e., description, but that seems to be a reserved word).  This should result in an `sbt` project called `<name>` in the current directory of your hard drive.  There may be extra files produced that you don't need and can erase.  Some variables like `artifactory` and `compress` are set to default values so as not to inundate you with questions.  Their values can be changed later. 
+and when prompted, give values for `name`, `package`, and `class`.  This should result in an `sbt` project called `<name>` in the current directory of your hard drive.  There may be extra files produced that you don't need and can erase.  Some variables like `artifactory` and `compress` are set to default values so as not to inundate you with questions.  Their values can be changed later. 
 
 If you want to modify how the template itself, then do clone the project from `github` and change what you'd like.  Test it by running `g8` from `sbt` and finding the results in the `./target/g8` directory.
 ```

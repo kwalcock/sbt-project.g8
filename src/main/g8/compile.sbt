@@ -1,11 +1,13 @@
 import org.clulab.sbt.BuildUtils
 
 Compile / packageBin / mappings := {
+  val packageDir = BuildUtils.pkgToDir("$package$")
 
   def mkMapping(filename: String): (File, String) = {
     // package;format="packaged" results in backlashes and
     // syntax errors on Windows, so this is converted manually.
-    file(filename) -> ("$package$".replace('.', '/') + s"/\$filename")
+    // file(filename) -> s"\$packageDir/\$filename")
+    file(filename) -> s"\$filename"
   }
 
   // Remove placeholder files (.gitempty).
@@ -15,6 +17,7 @@ Compile / packageBin / mappings := {
 
   // Put these files next to the model, in part so they don't conflict with other dependencies.
   filtered ++ Seq(
+    // Do this if the files should be moved to the package directory.
     mkMapping("README.md"),
     mkMapping("CHANGES.md"),
     mkMapping("LICENSE")

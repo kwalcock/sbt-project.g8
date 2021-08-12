@@ -55,9 +55,9 @@
         </encoder>
     </appender>
 
-    <appender name="clulab:$name$" class="ch.qos.logback.core.FileAppender">
+    <appender name="clulab:$class$" class="ch.qos.logback.core.FileAppender">
         <param name="Append" value="true" />
-        <file>\${HOSTNAME}-$name$.log</file>
+        <file>\${HOSTNAME}-$class$.log</file>
         <encoder>
             <pattern>\${clulab:pattern}</pattern>
         </encoder>
@@ -67,7 +67,7 @@
     <logger name="$package$.common" level="all" additivity="false">
         <appender-ref ref="clulab:stderr"/>
         <appender-ref ref="clulab:stdout"/>
-        <appender-ref ref="clulab:$name$"/>
+        <appender-ref ref="clulab:$class$"/>
     </logger>
 
     <!-- This accounts for anything coming from the core project. -->
@@ -75,13 +75,13 @@
     <logger name="$package$" level="all" additivity="false">
         <appender-ref ref="clulab:stderr"/>
         <appender-ref ref="clulab:stdout"/>
-        <appender-ref ref="clulab:$name$"/>
+        <appender-ref ref="clulab:$class$"/>
     </logger>
 
     <!-- This handles anything from outside of clulab that isn't configured otherwise. -->
     <root level="all">
         <appender-ref ref="clulab:stderr"/>
         <appender-ref ref="clulab:stdout"/>
-        <appender-ref ref="clulab:$name$"/>
+        <appender-ref ref="clulab:$class$"/>
     </root>
 </configuration>

@@ -1,12 +1,14 @@
 package $package$
 
+import $package$.common.utils.Test
+
 class TestConfig extends Test {
 
   behavior of "config"
 
   it should "be accessible" in {
-    val configured = $name$()
-    val message = configured.getArgString("$name$.message")
+    val configured = $class$()
+    val message = configured.getArgString("$Class$.message", None)
 
     println(message)
   }

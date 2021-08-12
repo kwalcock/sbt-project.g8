@@ -1,3 +1,3 @@
 # $name$
 
-$explanation$
+The $name$ project implements the $package$ package.

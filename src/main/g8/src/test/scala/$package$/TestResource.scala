@@ -1,5 +1,7 @@
 package $package$
 
+import $package$.common.utils.Test
+
 import java.io.FileNotFoundException
 import java.nio.charset.StandardCharsets
 

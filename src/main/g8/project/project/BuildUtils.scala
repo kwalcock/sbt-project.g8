@@ -33,6 +33,9 @@ object BuildUtils {
     System.getProperty("os.name").toLowerCase().contains("win")
   }
 
+  // One shouldn't use the giter8 packaged format because of backslashes in Windows.
+  def pkgToDir(pkg: String): String = pkg.replace('.', '/')
+
   // See also https://repo1.maven.org/maven2/com/typesafe/play/play-json_2.12.
   // Up to 2.8.7 theoretically, but 2.8.1 practically because of unresolved dependencies in webapp.
   // Again, only theoretically, because 2.7.4 is the last one to support Scala 2.11.

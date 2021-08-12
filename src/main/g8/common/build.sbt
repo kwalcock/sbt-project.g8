@@ -1,5 +1,5 @@
-name := "$name$-$name$common"
-description := "Code to be shared by other subprojects and clients"
+name := "$name$-common"
+description := "The $name$-common subproject implements everything common to $name$ projects."
 
 resolvers ++= Seq(
 //  Resolvers.localResolver, // Reserve for Two Six.
