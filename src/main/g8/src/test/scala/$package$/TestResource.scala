@@ -4,8 +4,6 @@ import $package$.common.utils.BuildUtils
 import $package$.common.utils.Sourcer
 import $package$.common.utils.Test
 
-import java.io.FileNotFoundException
-
 class TestResource extends Test {
 
   def getTextFromResource(path: String): String = {

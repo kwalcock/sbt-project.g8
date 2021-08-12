@@ -1,5 +1,6 @@
 package $package$.common.utils
 
+import java.io.FileNotFoundException
 import java.nio.charset.StandardCharsets
 
 import scala.io.BufferedSource
