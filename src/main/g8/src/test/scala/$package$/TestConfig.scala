@@ -7,8 +7,8 @@ class TestConfig extends Test {
   behavior of "config"
 
   it should "be accessible" in {
-    val configured = $class$()
-    val message = configured.getArgString("$class$.message", None)
+    val $class;format="decap"$ = $class$()
+    val message = $class;format="decap"$.getArgString("$class$.message", None)
 
     println(message)
   }

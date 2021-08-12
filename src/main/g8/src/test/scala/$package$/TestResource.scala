@@ -1,26 +1,12 @@
 package $package$
 
 import $package$.common.utils.BuildUtils
+import $package$.common.utils.Sourcer
 import $package$.common.utils.Test
 
 import java.io.FileNotFoundException
-import java.nio.charset.StandardCharsets
-
-import scala.io.BufferedSource
-import scala.io.Source
 
 class TestResource extends Test {
-
-  object Sourcer {
-    val utf8: String = StandardCharsets.UTF_8.toString
-
-    def sourceFromResource(path: String): BufferedSource = {
-      val url = Option(Sourcer.getClass.getResource(path))
-        .getOrElse(throw new FileNotFoundException(path))
-
-      Source.fromURL(url) // , utf8)
-    }
-  }
 
   def getTextFromResource(path: String): String = {
     val source = Sourcer.sourceFromResource(path)

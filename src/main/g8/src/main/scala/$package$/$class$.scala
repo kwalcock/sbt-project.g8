@@ -1,18 +1,9 @@
 package $package$
 
-import com.typesafe.config.Config
-import com.typesafe.config.ConfigFactory
-import $package$.common.utils.Configured
-
-trait $class$Configured extends Configured {
-  // This line doesn't work if there is a leading / in the resource name.  I tried.
-  lazy val config = ConfigFactory.parseResourcesAnySyntax("$class$")
-
-  override def getConf: Config = config
-}
+import $package$.common.utils.$class$Configured
 
 class $class$() extends $class$Configured {
-
+  // Add the bulk of your code here.
 }
 
 object $class$ {

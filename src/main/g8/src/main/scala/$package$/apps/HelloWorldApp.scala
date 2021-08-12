@@ -3,7 +3,10 @@ package $package$.apps
 import $package$.common.utils.$class$App
 
 object HelloWorldApp extends $class$App {
-  val message = getArgString("apps.HelloWorldApp.message", Some("Message not found!"))
+  val appMessage = args(0).lift.getOrElse(getArgString("apps.HelloWorldApp.message", Some("App message not found!")))
+  logger.info(appMessage)
 
-  logger.info(message)
+  val $class;format="decap"$ = $class$()
+  val classMessage = $class;format="decap"$.getArgString("$class$.message", Some("Class message not found!"))
+  logger.info(classMessage)
 }
