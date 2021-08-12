@@ -31,7 +31,8 @@ lazy val core = (project in file("."))
   .dependsOn(common % "compile -> compile; test -> test")
   .aggregate(common)
   .settings(
-    assembly / aggregate := false
+    assembly / aggregate := false,
+    assembly / mainClass := Some("$package$.apps.HelloWorldApp")
   )
 
 lazy val common = project
