@@ -29,7 +29,7 @@ Compile / packageBin := {
   ((Compile / packageBin).map { file: File =>
     // This is inside the map because otherwise there is an error message
     // [error] java.lang.IllegalArgumentException: Could not find proxy for val compress: Boolean
-    val useCompression = BuildUtilities.compression
+    val useCompression = BuildUtils.compression
 
     if (useCompression)
       file

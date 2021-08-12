@@ -1,3 +1,2 @@
--Xmx12g
--XX:+CMSClassUnloadingEnabled
--XX:+UseConcMarkSweepGC
+-J-Xmx6g
+-J-XX:MaxMetaspaceSize=10g
