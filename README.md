@@ -1,4 +1,4 @@
-# sbt-resource.g8
+# sbt-project.g8
 
 This is a [Giter8](http://foundweekends.org/giter8) template for creating an `sbt` project for a Scala application.  It is specifically for the  [CLU Lab](http://github.com/clulab) because it includes URLs to the lab's [Artifactory](http://artifactory.cs.arizona.edu:8081/artifactory/webapp/#/home) and [Sonatype](https://oss.sonatype.org/index.html#nexus-search;quick~clulab) servers, which wouldn't work for other groups, and it uses conventions and practices that are particular to this lab.
 
@@ -10,8 +10,8 @@ and when prompted, give values for `name`, `package`, and `class`.  This should 
 
 If you want to modify how the template itself, then do clone the project from `github` and change what you'd like.  Test it by running `g8` from `sbt` and finding the results in the `./target/g8` directory.
 ```
-$ git clone http://githubcom/clulab/sbt-resource.g8
-$ cd sbt-resource.g8
+$ git clone http://githubcom/clulab/sbt-project.g8
+$ cd sbt-project.g8
 $ sbt g8
 $ cd target/g8
 ```
